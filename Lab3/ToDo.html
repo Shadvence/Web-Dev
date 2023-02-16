@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        h3{
+            margin-top: 0px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 70px;
+            background-color: black;
+            color:grey;
+        }
+        #log{
+            margin-top: 40px;
+            margin-left: 250px;
+            font-weight: 300px;
+            font-size: 35px;
+        }
+        #inp{
+            margin-left: 330px;
+            border: 1px groove rgb(221, 223, 226);
+            border-radius: 5px;
+            width: 45%;
+            height: 25px;
+            padding-left: 10px;
+        }
+
+        #but{
+            background-color: rgb(70, 120, 178);
+            color: white;
+            height: 30px;
+            border: 1px hidden white;
+            border-radius: 5px;
+            margin-left: 15px;
+            width:40px;
+            
+        }
+        .checked{
+            text-decoration: line-through;
+        }
+        ul li {
+            border: 0.5px groove white;
+            border-radius: 5px;
+            width:100%;
+            height: 30px;
+            padding-top: 12px;
+        }
+        #list{
+            margin-top: 50px;
+            margin-left: 200px;
+            margin-right: 300px;
+            list-style-type: none;
+        }
+        #check{
+            margin-left: 10px;
+            margin-right: 20px;
+        }
+        #trash{
+            width: 15px;
+            float:right;
+            margin-right: 30px;
+        }
+    </style>
+    <body>
+        <h3>ToDo List</h3>
+        <div id="head">
+            <p id="log">ToDo List</p>
+            <div id="task">
+                <input type="text" id="inp" placeholder="New task">
+                <input type="submit" value="Add" id="but">
+            </div>
+        </div>
+        <ul id="list">
+            <li><input type="checkbox" id="check">Hit the gym<img id="trash" src="https://cdn-icons-png.flaticon.com/512/542/542724.png"></li>
+            <li class="checked"><input type="checkbox" id="check">Pay bills<img id="trash" src="https://cdn-icons-png.flaticon.com/512/542/542724.png"></li>
+            <li><input type="checkbox" id="check">Meet George<img id="trash" src="https://cdn-icons-png.flaticon.com/512/542/542724.png"></li>
+            <li><input type="checkbox" id="check">Buy eggs<img id="trash" src="https://cdn-icons-png.flaticon.com/512/542/542724.png"></li>
+            <li><input type="checkbox" id="check">Read a book<img id="trash" src="https://cdn-icons-png.flaticon.com/512/542/542724.png"></li>
+            <li><input type="checkbox" id="check">Organize office<img id="trash" src="https://cdn-icons-png.flaticon.com/512/542/542724.png"></li>
+        </ul>
+
+
+        <script>
+            'use strict';
+            const someCheckbox = document.getElementById('check');
+            someCheckbox.addEventListener('change', e => {
+                if(e.target.checked === true) {
+                    console.log("Checkbox is checked - boolean value: ", e.target.checked)
+                }
+                if(e.target.checked === false) {
+                    console.log("Checkbox is not checked - boolean value: ", e.target.checked)
+                }
+            });
+        </script>
+    </body>
+</html>

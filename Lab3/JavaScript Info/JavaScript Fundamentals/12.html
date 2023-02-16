@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            'use strict';
+            let num = prompt("What number", '');
+            for(let i = 3; i < num; i++){
+                let check = true;
+                for (let j = 2; j < i; j++) { 
+                    if (i % j == 0){
+                        check = false;
+                    }
+                }
+                if(check == true){
+                    alert(i);
+                }
+            }
+        </script>
+    </body>
+</html>
