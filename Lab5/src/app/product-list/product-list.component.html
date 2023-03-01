@@ -1,0 +1,45 @@
+<h2>Products</h2>
+<button (click)="showPhones()">
+  Телефоны
+</button>
+<button (click)="showConsoles()">
+  Приставки
+</button>
+<button (click)="showWatches()">
+  Часы
+</button>
+<button (click)="showGames()">
+  Игры
+</button>
+<!-- <div *ngif="Watches"> -->
+<div *ngFor="let product of products">
+    <!-- {{product.Category}}; -->
+    <h3>
+      <a [title]="product.name + ' details'">
+        {{ product.name }}
+      </a>
+    </h3>
+    <img [src]="product.image">
+    <p *ngIf="product.description">
+      Описание: {{ product.description }}
+    </p>
+    <button type="button" (click)="share(product.url)">
+      Ссылка на продукт
+    </button>
+    <app-product-alerts
+      [product]="product" 
+      (notify)="onNotify()">
+    </app-product-alerts>
+    <p></p>
+    <button (click)="like(product.id)">
+      Нравится: {{product.likes}}
+    </button>
+    <h4>Rating: {{product.rating}}</h4>
+  </div>
+<!-- </div> -->
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
